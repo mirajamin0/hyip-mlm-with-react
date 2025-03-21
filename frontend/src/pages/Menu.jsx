@@ -7,7 +7,6 @@ import VipList2 from "../assets/viplist2.png";
 import VipList3 from "../assets/viplist3.png";    
 
 function Menu() {
-  const [active, setActive] = useState(false);
   const [activeTab, setActiveTab] = useState("all");
 
   return (

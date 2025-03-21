@@ -26,22 +26,33 @@ function Login() {
     return () => clearInterval(intervalId); // Clean up on unmount
   }, []);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     // Check if the entered verification code matches the captcha
     if (verificationCode !== captcha) {
       setError("Verification code does not match. Please try again.");
       return;
+    }    
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        setError(data.message);
+      } else {
+        // Store the token as needed (e.g., localStorage)
+        localStorage.setItem("token", data.token);
+        navigate("/dashboard"); // Redirect to dashboard after login
+      }
+    } catch (err) {
+      console.error(err);
+      setError("Login failed. Please try again.");
     }
-
-    // Clear error if matched and proceed with login logic
-    setError("");
-    console.log("Login attempt:", { username, password, remember });
-    // TODO: Implement your actual login logic here
-    // On success: navigate("/dashboard");
-  };
-
+  }
   return (
     <div className="login-container">
       <div className="login-card">
@@ -77,7 +88,8 @@ function Login() {
             />
             <span className="captcha">{captcha}</span>
           </div>
-
+          {/* Display error message */}
+          {error && <div className="error-message">{error}</div>}
           {/* Options Row */}
           <div className="options-row">
             <label>
@@ -89,11 +101,11 @@ function Login() {
               &nbsp; Remember password
             </label>
             <a href="/forgot-password">Forgot password</a>
-          </div>
+            </div>
 
-          <button type="submit" className="login-button">Login</button>
+           <button type="submit" className="login-button">Login</button>
 
-          <div className="registration-link">
+            <div className="registration-link">
             <a href="/registration">Registration</a>
           </div>
         </form>

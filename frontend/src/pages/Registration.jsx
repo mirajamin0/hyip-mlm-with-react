@@ -31,7 +31,7 @@ function Registration() {
   }, []);
 
   // Handle form submission
-  const handleRegistration = (e) => {
+  const handleRegistration =  async (e) => {
     e.preventDefault();
 
     // 1. Check if the entered verification code matches the captcha
@@ -46,16 +46,24 @@ function Registration() {
       return;
     }
 
-    // Clear error if everything is valid
-    setError("");
-
-    // TODO: Implement your actual registration logic here (API call, store tokens, etc.)
-    console.log("Registration attempt:", { username, password });
-
-    // If registration is successful, redirect to login or dashboard
-    // navigate("/login");
-  };
-
+    try {
+        const response = await fetch("http://localhost:5000/api/auth/register", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        });
+        const data = await response.json();
+        if (!response.ok) {
+          setError(data.message);
+        } else {
+          // Registration successful, redirect to login page
+          navigate("/login");
+        }
+      } catch (err) {
+        console.error(err);
+        setError("Registration failed. Please try again.");
+      }
+    };   
   return (
     <div className="login-container">
       <div className="login-card">
