@@ -2,9 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/service.css";
 import ServiceAgentImage from "../assets/service-agent.png"; // Replace with your own image
-
+import BreadcrumbNav from "../components/BreadcrumbNav";
 function Service() {
   return (
+    // Breadcrumb Navigation
+    <div>
+      <BreadcrumbNav title="Service" />
     <div className="service-container">
       <div className="service-header">
         <img
@@ -35,6 +38,7 @@ function Service() {
           <span className="arrow">&gt;</span>
         </Link>
       </div>
+    </div>
     </div>
   );
 }
