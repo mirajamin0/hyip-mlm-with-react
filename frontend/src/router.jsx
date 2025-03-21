@@ -8,6 +8,8 @@ import Record from "./pages/Record";
 import UserDashboard from "./pages/UserDashboard"; // Updated Dashboard page
 import Login from "./pages/Login"; // New Login page
 import PrivateRoute from "./components/PrivateRoute";
+import Registration from "./pages/Registration";
+import HelpPage from "./pages/Help";
 
 function Router() {
   return (
@@ -17,6 +19,7 @@ function Router() {
       <Route path="/menu" element={<Menu />} />
       <Route path="/record" element={<Record />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/registration" element={<Registration />} />
       <Route
         path="/dashboard"
         element={
@@ -26,6 +29,7 @@ function Router() {
         }
       />
       <Route path="*" element={<div>Page Not Found</div>} />
+     <Route path="/help" element={<HelpPage />} />
     </Routes>
   );
 }

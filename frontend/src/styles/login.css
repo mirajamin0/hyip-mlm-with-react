@@ -1,0 +1,146 @@
+/* src/styles/login.css */
+
+/* Background Container */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6190E8 0%, #A7BFE8 100%);
+  }
+  
+  /* White Card for the Login Form */
+  .login-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title / Heading */
+  .login-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  /* Input Fields */
+  .login-input {
+    width: 90%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+  
+  .login-input:focus {
+    outline: none;
+    border-color: #6190E8;
+  }
+  /* Options Row for "Remember password" and "Forgot password" */
+  .options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  .options-row a {
+    color: #6190E8;
+    text-decoration: none;
+  }
+  
+  .options-row a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Login Button */
+  .login-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #6190E8;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #4a7bd4;
+  }
+  
+  /* Registration Link */
+  .registration-link {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .registration-link a {
+    color: #6190E8;
+    text-decoration: none;
+  }
+  
+  .registration-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .verification-row {
+    display: flex;
+    align-items: center;      /* Keep them aligned vertically in the center */
+    margin-bottom: 1rem;
+  }
+  
+  .verification-row .captcha-input {
+    flex: 1;                 /* Take up remaining space */
+    margin-right: 10px;      /* Space between input and captcha */
+    width: auto !important;  /* Override any global 'width: 100%' */
+  }
+  
+  .captcha {
+    width: 60px;             /* Fixed width for the captcha display */
+    height: 36px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .captcha-input {
+    width: 100%;
+    margin-right: 10px;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9rem;
+  }
+  /* login-container, login-card, login-title, login-input, verification-row,
+   captcha-box, login-button, registration-link, etc. */
+
+/* Example snippet */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6190E8 0%, #A7BFE8 100%);
+  }
+  
+  .login-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 300px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* ... rest of the styles ... */
+  

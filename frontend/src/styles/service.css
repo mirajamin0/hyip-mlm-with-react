@@ -1,0 +1,71 @@
+/* src/styles/service.css */
+
+/* Page Container */
+.service-container {
+    min-height: 100vh;
+    background-color: #fde8f2; /* Light pink background; adjust as needed */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+  }
+  
+  /* Header Section */
+  .service-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Service Image (optional) */
+  .service-image {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+  
+  /* Title */
+  .service-header h1 {
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+    color: #333;
+  }
+  
+  /* Subtext (service time) */
+  .service-header p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Service List */
+  .service-list {
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  /* Individual Service Item */
+  .service-item {
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* So text is on left, arrow on right */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .service-item:hover {
+    box-shadow: 0 4px 10px #cc18181a;
+    color: #ff0800
+  }
+  
+  /* Optional arrow styling */
+  .arrow {
+    font-size: 1.2rem;
+    color: #bbb;
+  }
+  
