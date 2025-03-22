@@ -27,4 +27,5 @@ exports.updateVipLevel = async (req, res) => {
     console.error("VIP Update Error:", err);
     return res.status(500).json({ message: "Server Error" });
   }
+  
 };

@@ -10,6 +10,8 @@ import Login from "./pages/Login"; // New Login page
 import PrivateRoute from "./components/PrivateRoute";
 import Registration from "./pages/Registration";
 import HelpPage from "./pages/Help";
+import DepositForm from "./components/DepositForm";
+import WithdrawalForm from "./components/WithdrawalForm";
 
 function Router() {
   return (
