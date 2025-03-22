@@ -31,8 +31,11 @@ function Router() {
         }
       />
       <Route path="*" element={<div>Page Not Found</div>} />
-     <Route path="/help" element={<HelpPage />} />
+      <Route path="/help" element={<HelpPage />} />
+       <Route path="/diposit" element={<DepositForm />} />
+      <Route path="/withdraw" element={<WithdrawalForm />} />
     </Routes>
+
   );
 }
 

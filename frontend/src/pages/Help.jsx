@@ -2,7 +2,6 @@
 import React from "react";
 import BreadcrumbNav from "../components/BreadcrumbNav";
 
-
 function HelpPage() {
   return (
     <div>

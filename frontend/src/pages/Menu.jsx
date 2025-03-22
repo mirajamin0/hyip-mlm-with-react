@@ -1,5 +1,5 @@
 // src/pages/Menu.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react';
 import BreadcrumbNav from "../components/BreadcrumbNav"; // Import BreadcrumbNav component
 import "../styles/Menu.css";
 import VipList1 from "../assets/viplist1.png";
@@ -8,9 +8,25 @@ import VipList3 from "../assets/viplist3.png";
 
 function Menu() {
   const [activeTab, setActiveTab] = useState("all");
+  const [vipPackages, setVipPackages] = useState([]);
+  const [selectedVip, setSelectedVip] = useState(null);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/vip-packages")
+      .then(res => res.json())
+      .then(data => setVipPackages(data));
+  }, []);
+
+  const fetchProducts = (vipId) => {
+    fetch(`http://localhost:5000/api/products/${vipId}`)
+      .then(res => res.json())
+      .then(data => setProducts(data));
+  };
+
 
   return (
-    // Breadcrumb Navigation
+<div>
  <div>
     <div>
       <BreadcrumbNav title="Menu" />  
@@ -55,8 +71,37 @@ function Menu() {
     {/* Example "No more" text at the bottom */}
     <div className="no-more">No more</div>
   </div>
+
+      <div>
+      <div className="vip-buttons">
+        {vipPackages.map(vip => (
+          <button
+            key={vip.id}
+            onClick={() => {
+              setSelectedVip(vip.vip_level);
+              fetchProducts(vip.id);
+            }}
+            className={selectedVip === vip.vip_level ? "active" : ""}
+          >
+            {vip.vip_level}
+          </button>
+        ))}
+      </div>
+
+      <div className="product-list">
+        {products.map(product => (
+          <div key={product.id} className="product-item">
+            <img src={product.image} alt={product.name} />
+            <div>{product.name}</div>
+            <div>Commission: {product.commission}%</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
   </div>
-  );      
+</div>
+  );
 }
 
 export default Menu;

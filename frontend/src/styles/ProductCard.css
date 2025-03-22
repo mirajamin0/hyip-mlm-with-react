@@ -1,0 +1,33 @@
+.product-card {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  .product-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .product-details h4 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .product-details p {
+    margin: 0;
+    color: #555;
+  }
+  
+  .product-details span {
+    font-weight: bold;
+    color: #f44336;
+  }
+  

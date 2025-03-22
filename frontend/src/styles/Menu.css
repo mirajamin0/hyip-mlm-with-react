@@ -127,4 +127,30 @@
     font-size: 0.85rem;
     margin-top: 1rem;
   }
+  .vip-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .vip-tab {
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 15px;
+  }
+  
+  .vip-tab.active {
+    background-color: #4b89dc;
+    color: white;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
   
